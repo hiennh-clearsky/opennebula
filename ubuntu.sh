@@ -9,8 +9,8 @@ else
    echo "3. Disable SSH password login" >> /root/firstboot.txt
    echo "4. Remove LXD and Snapd" >> /root/firstboot.txt
    echo "5. Change time to local timezone Asia/Ho_Chi_Minh" >> /root/firstboot.txt
-   echo "6. Reboot"
-   echo "*** ONLY REMOVE THIS FILE IF YOU NEED TO RUN THIS SCRIPT IN NEXT BOOT ***"
+   echo "6. Reboot" >> /root/firstboot.txt
+   echo "*** ONLY REMOVE THIS FILE IF YOU NEED TO RUN THIS SCRIPT IN NEXT BOOT ***" >> /root/firstboot.txt
    sed -i 's/archive.ubuntu.com/mirror.clearsky.vn/g' /etc/apt/sources.list
    sed -i 's/PasswordAuthentication\ yes/PasswordAuthentication\ no/g' /etc/ssh/sshd_config
    apt update
