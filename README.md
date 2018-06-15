@@ -3,6 +3,7 @@ Startup script for opennebula instance. This script will be called when an insta
 1. Update the whole system.
 2. Disable SSH password.
 3. Reboot.
+
 Install ceph mimic for ONE node
 1. Add key.
 2. Add ceph repository.
