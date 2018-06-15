@@ -13,7 +13,7 @@ else
    echo "*** ONLY REMOVE THIS FILE IF YOU NEED TO RUN THIS SCRIPT IN NEXT BOOT ***"
    sed -i 's/archive.ubuntu.com/mirror.clearsky.vn/g' /etc/apt/sources.list
    sed -i 's/PasswordAuthentication\ yes/PasswordAuthentication\ no/g' /etc/ssh/sshd_config
-   apt update >> /root/firstboot.txt
+   apt update
    apt purge lxd* snapd* -y --autoremove
    DEBIAN_FRONTEND='noninteractive' apt -y -o Dpkg::Options::='--force-confdef' -o Dpkg::Options::='--force-confold' dist-upgrade
    timedatectl set-timezone Asia/Ho_Chi_Minh
