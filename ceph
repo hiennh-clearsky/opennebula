@@ -2,3 +2,8 @@ CEPH
 echo deb https://download.ceph.com/debian-mimic/ $(lsb_release -sc) main | sudo tee /etc/apt/sources.list.d/ceph.list
 wget -q -O- 'https://download.ceph.com/keys/release.asc' | sudo apt-key add -
 sudo apt update && sudo apt install ceph-common -y --autoremove
+
+COPY SECRET
+virsh -c qemu:///system secret-define secret.xml
+virsh -c qemu:///system secret-set-value --secret $UUID --base64 $(cat client.libvirt.key)
+usermod -a -G ceph oneadmin
